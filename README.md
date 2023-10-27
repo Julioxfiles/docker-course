@@ -31,9 +31,12 @@ $ docker pull node:18 # Download node 18 version.
 $ docker image rm node # Remove the node image.
 $ docker create mongo # Creates a mongo container.
 $ docker start containerId # Start a container.
+$ docker stop containerId # Stop a container.
 
-$ docker create container --name monguito mongo 
+$ docker container create --name monguito mongo 
 # Creates a container called monguito from mongo image. 
+$ docker start monguito # Start a container.
+$ docker stop monguito # Stop a container.
 
 $ docker run mongo # Download a mongo image, create a container and start it.
 
@@ -41,7 +44,6 @@ $ docker log mongo # Log the mongo container.
 
 # Using docker real case:
 $ docker pull mongo # Download mongo.
-$ docker ps -a # List all containers.
 $ docker create container -p27017:27017 --name monguito 
 -e MONGO_INITDB_ROOT_USERNAME=nico
 -e MONGO_INITDB_ROOT_PASSWORD=password
@@ -56,7 +58,6 @@ $ docker network rm # Delete a network.
 ### Que es un contenedor ?
 
 Un contenedor es una forma de poder empaquetar nuestros programas, aplicaciones que estamos desarrollando y sus dependencias. Incluyendo sus archivos de configuracion. Y es portable o facil de compartir.
-
 
 ### Donde se almacenan las imagenes ?
 
@@ -80,12 +81,12 @@ Instala la version de node de diversas formas.
 ```
 docker pull node # Instala la version latest de node.
 docker pull node:18 # Instala la version 18 de node
-docker pull node:16
+docker pull node:16 # Instala la version 16 de node
 ```
 
 Descarga una imagen de docker hub.
 ```
-$ docker pull mysql // Descarga la ultima.
+$ docker pull mysql // Descarga la ultima version de mysql.
 ```
 
 Descarga mysql para cierta plataforma o arqutectura.
@@ -101,7 +102,7 @@ $ docker images
 
 Descargando la ultima imagen de mongo para crear un contenedor de mongo.
 ```
-$ docker pull mongo
+$ docker pull mongo # Download the latest version of mongo image.
 ```
 
 Variables de configuracion. Estas dependen de la imagen que estemos utilizando para crear nuestros contenedores.
@@ -139,7 +140,7 @@ $ docker create --name monguito mongo
 docker start monguito # Arranca el contenedor
 ```
 
-### Puertos
+### Puertos (ports)
 
 Un puerto publicado es un puerto abierto en nuestra computadora.
 
