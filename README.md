@@ -20,7 +20,7 @@ Pulling a docker hello image from https://hub.docker.com/
 $ docker run hello-world
 ```
 
-### The docker command lists.
+### The basic docker command lists.
 ```
 $ docker images # List all the images.
 $ docker ps -a # List all the containers.
@@ -35,10 +35,20 @@ $ docker create container --name monguito mongo
 
 $ docker run mongo # Download a mongo image, create a container and start it.
 
+$ docker log mongo # Log the mongo container.
 
+# Using docker real case:
+$ docker pull mongo # Download mongo.
+$ docker ps -a # List all containers.
+$ docker create container -p27017:27017 --name monguito 
+-e MONGO_INITDB_ROOT_USERNAME=nico
+-e MONGO_INITDB_ROOT_PASSWORD=password
+mongo
 
-
-
+# Network
+$ docker network ls # List all networks
+$ docker network create my-network # Create a new network.
+$ docker network rm # Delete a network.
 
 ```
 ### Que es un contenedor ?
@@ -164,8 +174,10 @@ $ docker image rm mongo # Remove mongo.
 $ docker images # List all images.
 ```
 
-### docker run
+### The docker run command
+```
 $ docker run mongo 
+```
 
 Docker run busca la imagen en local, si no la encuentra la descarga. Luego crea el contenedor y luego inicia el contenedor. Sin embargo esta opcion, utiliza docker log --follow al ejecutar el contenedor. De tal forma que no nos permite continuar escribiendo mas comandos en nuestra terminal actual. Es decir, no corre en segundo plano el comando, sino que tenemos que abrir otra terminal.
 
@@ -446,9 +458,13 @@ HOT RELOAD se puede utilizar en ambiente de desarrollo.
 Al llegar un nuevo desarrollador el solo ejecuta docker compose up.
 
 This docker summary was taken from:
+
 Video: https://www.youtube.com/watch?v=4Dko5W96WHg&t=235s
+
 Channel: https://www.youtube.com/@HolaMundoDev
+
 Web Page: https://academia.holamundo.io/collections
+
 Done by: Nicolás Schürmann
 
 
