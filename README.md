@@ -239,21 +239,29 @@ FROM node:18
 # La imagen base que utilizara sera node version 18.
 
 RUN mkdir -p /home/app 
-# Creara una carpeta donde vamos a meter el codigo fuente de nuestra aplicacion. Esta ruta es una ruta dentro del mismo contenedor. Lo que vendria siendo una distribucion de linux. Esto no hace referencia a tu maquina fisica o a tu sistema de archivos de tu maquina. Sino mas bien hace referencia al contenedor que estamos creando ahora.
+# Creara una carpeta donde vamos a meter el codigo fuente de nuestra aplicacion. 
+Esta ruta es una ruta dentro del mismo contenedor. Lo que vendria siendo una
+distribucion de linux. Esto no hace referencia a tu maquina fisica o a tu sistema 
+de archivos de tu maquina. Sino mas bien hace referencia al contenedor que estamos
+creando ahora.
 
 COPY  . /home/app 
-# Esta es la carpeta en donde tienes el codigo fuente que estas creando en tu computadora anfitrion y que quieres pasar al contenedor. El comando COPY nos permite acceder al sistema operativo anfitrion de donde va a tomar el codigo fuente.
+# Esta es la carpeta en donde tienes el codigo fuente que estas creando en tu 
+computadora anfitrion y que quieres pasar al contenedor. El comando COPY nos 
+permite acceder al sistema operativo anfitrion de donde va a tomar el codigo fuente.
 
 EXPOSE 3000
-# Exponer un puerto para que otros contenedores o nosotros desde un sistema operativo anfitrion se pueda conectar a este contenedor.
+# Exponer un puerto para que otros contenedores o nosotros desde un sistema operativo
+anfitrion se pueda conectar a este contenedor.
 
 CMD ["node","/home/app/index.js"]
 # Indica el comando que tiene que ejecutar el contenedor para que la aplicacion corra.
-Esto se hace con corchetes, como si fuera un array, en donde el primer elemento es el comando y el segundo la ruta completa del archivo que se ejecutara.
+Esto se hace con corchetes, como si fuera un array, en donde el primer elemento es el
+comando y el segundo la ruta completa del archivo que se ejecutara.
 ```
 
 
-Si no ponemos la ruta completa la aplicacion dentro del contenedor no se va a ejecutar y cuando usemos la instruccion docker logs vermos que no corrio correctamente.
+Si no ponemos la ruta completa, la aplicacion dentro del contenedor no se va a ejecutar y cuando usemos la instruccion docker logs vermos que no corrio correctamente.
 
 ### Networks
 Para poder conectar un contenedor con otro, por ejemplo un contenedor de php con uno de mysql y estos con otro en donde tenemos el codigo de nuestra app necesitamos crear una red o network.
@@ -468,16 +476,4 @@ Channel: https://www.youtube.com/@HolaMundoDev
 Web Page: https://academia.holamundo.io/collections
 
 Done by: Nicolás Schürmann
-
-
-
-
-
-
-
-
-
-
-
-
 
