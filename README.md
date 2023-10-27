@@ -1,21 +1,15 @@
-# My Docker summary
-This is my summary of docker and its most used commands and a whole docker course taken from other authors.
-
 ## Installing Doker in Windows 10.
 
-In order to use docker in your Windows 10 you first need to install the Windows Subsystem for Linux (WSL) so you can install a Linux distribution (such as Ubuntu, OpenSUSE, Kali, Debian, Arch Linux, etc) and use Linux applications, utilities, and Bash command-line tools directly on Windows.
+In order to use docker in your Windows 10 need to install a program called Windows Subsystem for Linux (WSL), so you can install a Linux distribution directly on Windows.
 
-In short words, the WSL is a Windows Program that allows you to install and run Linux Distributions on your Windows 10 OS.
-
-1.- Installing  WSL2. https://learn.microsoft.com/en-us/windows/wsl/install
-
+1.- Installing  WSL. https://learn.microsoft.com/en-us/windows/wsl/install
 ```
  $ wsl --install
 ```
 
 2.- Now you have to download and install docker desktop from
 
-3.- Open an Ubuntu terminal and run the following commands to make sure that the installation was successful.
+3.- Open an Ubuntu terminal and run the following commands.
 ```
 $ docker --version
 $ docker-compose --version 
